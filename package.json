@@ -1,0 +1,29 @@
+{
+  "name": "partials-for-js",
+  "version": "0.0.0",
+  "description": "Implementation of partial functions for JavaScript",
+  "main": "partials-for-js.coffee",
+  "scripts": {
+    "test": "node_modules/.bin/jasmine-node --matchall --coffee --verbose test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeroenpeeters/partials-for-js.git"
+  },
+  "keywords": [
+    "partial",
+    "functions",
+    "currying"
+  ],
+  "author": "jeroen@peetersweb.nl",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "4e5346f5ee2ba0bda8948a2bb8b41de6eb170f14",
+  "dependencies": {
+    "coffee-script": "~1.8.0"
+  },
+  "devDependencies": {
+    "jasmine": "~2.0.1",
+    "jasmine-node": "~1.14.5"
+  }
+}
