@@ -1,4 +1,4 @@
 partials-for-js
 ===============
 
-Implementation of support for partial functions in JavaScript
+Implements support for partial function application in JavaScript.
