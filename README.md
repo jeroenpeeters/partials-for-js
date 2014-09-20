@@ -30,7 +30,7 @@ var add = partial(function(x, y) {
 var addFive = add(5);
 
 var result = addFive(10);
-# result now holds value 15
+// result now holds value 15
 ```
 
 When to use partial functions
