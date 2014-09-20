@@ -28,7 +28,8 @@ ff2 = ff1 10
 # ff2 is now a function of the form f(c)
 result = ff2 20
 
-# all parameters are collected and the original function f is called. result now holds value 35.
+# all parameters are collected and the original function f is called. 
+# result now holds value 35.
 ```
 
 In this example all parameters are applied one-by-one. It is however possible to apply more parameters at once.
