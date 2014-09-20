@@ -6,7 +6,7 @@ Implements support for partial function application in JavaScript.
 What are partial functions?
 ---------------------------
 
-Many programming languages you are only able to call a function with the same amount of parameters as the function has been defined with.
+Many programming languages are only able to call a function with the same amount of parameters as the function has been defined with.
 Partial function application makes it possible to call a function with fewer parameters than it has defined. This call will result in a partially applied function.
 The partially applied function accepts the remaining parameters. When no parameters remain, the original function implementation is called.
 
