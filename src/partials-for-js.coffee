@@ -2,7 +2,7 @@ pushAll = (a, values) ->
  for v in values
   a.push v
 
-createWrapper = (dis, f, args) ->
+createFunctionWrapper = (dis, f, args) ->
   values = []
   n = () ->
    pushAll values, arguments
@@ -13,9 +13,14 @@ createWrapper = (dis, f, args) ->
     f.apply dis, values
   n.apply null, args
 
-#for f of obj
-# if typeof obj[f] == 'function'
-#   objf = obj[f]
-#   obj[f] = () -> createWrapper this, objf, arguments
+createObjectWrapper = (dis, obj, args)
+    for f of obj
+        if typeof obj[f] == 'function'
+            objf = obj[f]
+            obj[f] = () -> createFunctionWrapper dis, objf, arguments
 
-module.exports = (f) -> () -> createWrapper this, f, arguments
+module.exports = (x) -> () -> 
+    switch typeof x
+        when 'object' then createObjectWrapper this, x, arguments
+        when 'function' then createFunctionWrapper this, x, arguments
+        else undefined
