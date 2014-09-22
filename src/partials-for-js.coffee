@@ -13,7 +13,7 @@ createFunctionWrapper = (dis, f, args) ->
     f.apply dis, values
   n.apply null, args
 
-createObjectWrapper = (dis, obj, args)
+createObjectWrapper = (dis, obj, args) ->
     for f of obj
         if typeof obj[f] == 'function'
             objf = obj[f]
