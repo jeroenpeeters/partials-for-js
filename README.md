@@ -1,3 +1,5 @@
+https://travis-ci.org/jeroenpeeters/partials-for-js.svg?branch=master
+
 partials-for-js
 ===============
 
