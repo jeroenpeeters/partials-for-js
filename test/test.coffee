@@ -16,6 +16,7 @@ describe 'Partial function application', ->
         p = partial f1
         p1 = p 1
         p2 = p1 2
+        console.log p2
         v = p2 3
         
         expect(typeof p1).toBe 'function'
@@ -27,3 +28,16 @@ describe 'Partial function application', ->
         add5 = add 5
         
         expect(add5 1).toBe 6
+        
+describe 'Partial function application for objects', ->
+    it 'creates partial function for function properties', ->
+        o = 
+            s: 'string'
+            m: -> true
+            i: 123
+            f: (x, y) -> 2*x + y
+        op = partial o
+        
+        expect(op.s).toBe 'string'
+        expect(op.i).toBe 123
+               

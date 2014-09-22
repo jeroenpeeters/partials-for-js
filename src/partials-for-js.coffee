@@ -2,25 +2,31 @@ pushAll = (a, values) ->
  for v in values
   a.push v
 
-createFunctionWrapper = (dis, f, args) ->
+createFunctionWrapper = (dis, f) ->
   values = []
   n = () ->
    pushAll values, arguments
    if values.length < f.length
     n.length = f.length - values.length
+    console.log 'returning n'
     n
    else
+    console.log 'applying original f'
     f.apply dis, values
-  n.apply null, args
+  n()
 
 createObjectWrapper = (dis, obj, args) ->
+    newobj = {}
     for f of obj
         if typeof obj[f] == 'function'
-            objf = obj[f]
-            obj[f] = () -> createFunctionWrapper dis, objf, arguments
+            newobj[f] = () -> createFunctionWrapper dis, obj[f], arguments
+        else
+            newobj[f] = obj[f]
+    newobj
 
-module.exports = (x) -> () -> 
+module.exports = (x) -> 
     switch typeof x
-        when 'object' then createObjectWrapper this, x, arguments
-        when 'function' then createFunctionWrapper this, x, arguments
+        when 'object' then createObjectWrapper this, x
+        when 'function' then createFunctionWrapper this, x
         else undefined
+            
