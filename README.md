@@ -1,4 +1,4 @@
-![Travis CI Badge](https://travis-ci.org/jeroenpeeters/partials-for-js.svg?branch=master)
+[![Build Status](https://travis-ci.org/jeroenpeeters/partials-for-js.svg?branch=master)](https://travis-ci.org/jeroenpeeters/partials-for-js)
 
 partials-for-js
 ===============
